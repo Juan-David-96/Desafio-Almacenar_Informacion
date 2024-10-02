@@ -1,0 +1,21 @@
+<h1>Movies#new</h1>
+<p>Find me in app/views/movies/new.html.erb</p>
+
+<%= form_with model: @movie, method: :post do |form| %>
+<div class="col-4">
+<div>
+<%= form.label :title, "Nombre Pelicula", class: "form-label"
+%>
+<%= form.text_field :name, class: "form-control" %>
+</div>
+<div>
+<%= form.label :title, "Sinopsis", class:
+"form-label" %>
+<%= form.text_field :lastname, class: "form-control" %>
+</div>
+<div>
+<%= form.label :title, "Enter your specialty", class:
+"form-label" %>
+<%= form.text_field :specialty, class: "form-control" %>
+</div>
+<div>
