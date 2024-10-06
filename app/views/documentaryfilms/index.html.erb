@@ -1,0 +1,23 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'index' %>
+<% end %>
+
+<h1 class="titulo">Documentales</h1>
+<p class="desc">¡Bienvenido a nuestra página de documentales! Aquí encontrarás una selección fascinante de historias que exploran el mundo a través de diversas perspectivas. Desde impresionantes relatos de la naturaleza hasta profundos estudios sobre la historia y la cultura, cada documental está diseñado para informarte y inspirarte. Sumérgete en nuestras categorías, descubre nuevos temas y amplía tus horizontes mientras disfrutas de contenido que no solo entretiene, sino que también enriquece tu conocimiento del mundo que nos rodea. ¡Comienza tu viaje visual hoy!</p>
+
+<h2 class="titulo">Lista de Documentales</h2>
+
+<div class="cont-carta">
+  <% @documentaryfilm_all.each do |documentaryfilm| %>
+  <div class="carta">
+    <h3><%= documentaryfilm.name %></h3>  
+    <p>Director: <%= documentaryfilm.director %></p>
+    <p><%= documentaryfilm.synopsis.split[0..9].join(" ") %>...</p>
+  </div>
+<% end %>
+
+</div>
+
+<div class="cont-boton">
+  <%= link_to 'Agregar un Nuevo Documental', new_documentaryfilm_path, class: 'boton' %>
+</div>

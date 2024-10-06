@@ -1,10 +1,10 @@
-<h1>Movies#new</h1>
-<p>Find me in app/views/movies/new.html.erb</p>
+<h1>Documentaryfilm#new</h1>
+<p>Find me in app/views/documentaryfilm/new.html.erb</p>
 
-<%= form_with model: @movie, method: :post do |form| %>
+<%= form_with model: @documentaryfilm, method: :post do |form| %>
   <div class="col-4">
     <div>
-      <%= form.label :name, "Nombre Película", class: "form-label" %>
+      <%= form.label :name, "Nombre Documental", class: "form-label" %>
       <%= form.text_field :name, class: "form-control" %>
     </div>
     <div>
@@ -16,7 +16,7 @@
       <%= form.text_field :director, class: "form-control" %>
     </div>
     <div>
-      <%= form.submit "Crear Película", class: "btn btn-primary" %>
+      <%= form.submit "Crear Documental", class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>

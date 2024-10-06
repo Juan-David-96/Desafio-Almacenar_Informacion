@@ -1,0 +1,22 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'index' %>
+<% end %>
+
+<h1 class="titulo">Series</h1>
+<p class="desc">¡Bienvenido a nuestra página de series! Aquí encontrarás una variedad de programas que te mantendrán enganchado episodio tras episodio. Desde dramas intensos hasta comedias ligeras, hay algo para todos los gustos. Explora nuestro catálogo y descubre nuevas historias que te atraparán.</p>
+
+<h2 class="titulo">Lista de Series</h2>
+
+<div class="cont-carta">
+  <% @serie_all.each do |serie| %>
+    <div class="carta">
+      <h3><%= serie.name %></h3>  
+      <p>Director: <%= serie.director %></p>
+      <p><%= serie.synopsis.split[0..9].join(" ") %>...</p>
+    </div>
+  <% end %>
+</div>
+
+<div class="cont-boton">
+  <%= link_to 'Agregar una Nueva Serie', new_series_path, class: 'boton' %>
+</div>

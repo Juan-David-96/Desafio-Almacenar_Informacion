@@ -1,8 +1,23 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'index' %>
+<% end %>
 
-<% @movie_all.each do |pelicula| %>
-    <h2><%= pelicula.name %></h2>
-    <p><%= pelicula.synopsis %></p>
-    <p><%= pelicula.director %></p>
-    <% end%>
+<h1 class="titulo">Películas</h1>
+<p class="desc">¡Bienvenido a nuestra página de películas! Aquí encontrarás una selección de films que te llevarán a emocionantes aventuras y te harán reflexionar sobre la vida y sus matices. Desde clásicos atemporales hasta las últimas novedades, cada película está diseñada para entretener y conmover. Sumérgete en nuestro catálogo y descubre el mundo del cine.</p>
+
+<h2 class="titulo">Lista de Películas</h2>
+
+<div class="cont-carta">
+  <% @movie_all.each do |movie| %>
+    <div class="carta">
+      <h3><%= movie.name %></h3>  
+      <p>Director: <%= movie.director %></p>
+      <p><%= movie.synopsis.split[0..9].join(" ") %>...</p>
+    </div>
+  <% end %>
+</div>
+
+<div class="cont-boton">
+  <%= link_to 'Agregar una Nueva Película', new_movie_path, class: 'boton' %>
+</div>
+
